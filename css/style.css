@@ -1,0 +1,42 @@
+/* remove auto padding and margin */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* display items with flex, center horizontally and vertically */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* display items with flex, arrange vertically */
+.vertical-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* main div container */
+#main-div {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* audio player div container */
+#audio-player-div {
+    width: 40%;
+    background-color: blue;
+    height: 300px;
+    margin-top: 10px;
+}
+
+#cover-img {
+    width: 220px;
+}
+
+#progress-slider {
+    width: 100px;
+}
