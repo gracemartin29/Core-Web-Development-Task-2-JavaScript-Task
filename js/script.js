@@ -97,11 +97,11 @@ audioPlayerCard.addEventListener("dragstart", function (event) {
 })
 
 dropZone.addEventListener("dragover", function (event) {
-    event.preventDeafault()
+    event.preventDefault()
 })
 
 dropZone.addEventListener("drop", function (event) {
-    dropZone.prepend(card)
+    dropZone.prepend(audioPlayerCard)
 })
 
 // links all events to functions
