@@ -17,6 +17,10 @@ const durationText = document.getElementById("duration-text");
 // drag and drop constants
 const audioPlayerCard = document.getElementById("audio-player-div");
 const dropZone = document.getElementById("main-div");
+let draggedImage = undefined;
+
+let offsetX = 0;
+let offsexY = 0;
 
 // links audio file, first song by deafualt
 audioPlayer.src = "assets/music/song1";
@@ -94,6 +98,13 @@ function secondsToMMSS(seconds) {
 // drag and drop functions
 audioPlayerCard.addEventListener("dragstart", function (event) {
     console.log(event)
+
+    draggedImage = event.target;
+
+    const style = window.getComputedStyle(draggedImage);
+
+    offsetX = event.clientX - parseInt(style.left);
+    offsetY = event.clientY - parseInt(style.top);
 })
 
 dropZone.addEventListener("dragover", function (event) {
@@ -102,6 +113,9 @@ dropZone.addEventListener("dragover", function (event) {
 
 dropZone.addEventListener("drop", function (event) {
     dropZone.prepend(audioPlayerCard)
+
+    draggedImage.style.left = event.clientX - offsetX + "px";
+    draggedImage.style.top = event.clientY - offsetY + "px";
 })
 
 // links all events to functions

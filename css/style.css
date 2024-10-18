@@ -32,6 +32,7 @@
 
 /* audio player div container .aka card*/
 #audio-player-div {
+    position: relative;
     width: 500px;
     background-color: blue;
     height: 300px;
