@@ -23,7 +23,7 @@ let offsetX = 0;
 let offsexY = 0;
 
 // links audio file, first song by deafualt
-audioPlayer.src = "assets/music/song1";
+audioPlayer.src = "assets/music/mascara-audio.mp3";
 audioPlayer.volume = 0.5;
 
 // let variables
