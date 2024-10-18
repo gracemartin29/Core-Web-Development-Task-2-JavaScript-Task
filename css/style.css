@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+/* h1 styling */
+h1{
+    text-shadow: 0 0 20px rgb(123, 255, 244);
+}
+
 /* display items with flex, center horizontally and vertically */
 .container {
     display: flex;
@@ -28,20 +33,28 @@
 #main-div {
     width: 100vw;
     height: 100vh;
+    background-image: url("/assets/images/background-image.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 /* audio player div container .aka card*/
 #audio-player-div {
     width: 500px;
-    background-color: blue;
+    background-color: rgb(13, 78, 118);
+    color: rgb(243, 245, 255);
+    font-size: large;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgb(123, 255, 244);
     height: 300px;
     margin-top: 10px;
 }
 
 #cover-img {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
     object-fit: cover;
+    padding: 5px;
 }
 
 #progress-slider {
