@@ -15,7 +15,7 @@ const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
 // drag and drop constants
-const audioPlayerCard = document.getElementById("audio-player-div");
+const item = document.getElementById("item");
 const dropZone = document.getElementById("main-div");
 let draggedImage = undefined;
 
@@ -96,7 +96,7 @@ function secondsToMMSS(seconds) {
 }
 
 // drag and drop functions
-audioPlayerCard.addEventListener("dragstart", function (event) {
+item.addEventListener("dragstart", function (event) {
     console.log(event)
 
     draggedImage = event.target;
@@ -112,7 +112,7 @@ dropZone.addEventListener("dragover", function (event) {
 })
 
 dropZone.addEventListener("drop", function (event) {
-    dropZone.prepend(audioPlayerCard)
+    dropZone.prepend(item)
 
     draggedImage.style.left = event.clientX - offsetX + "px";
     draggedImage.style.top = event.clientY - offsetY + "px";
