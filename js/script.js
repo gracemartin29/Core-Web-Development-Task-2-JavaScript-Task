@@ -14,6 +14,10 @@ const volumeSlider = document.getElementById("volume-slider");
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
 
+// drag and drop constants
+const audioPlayerCard = document.getElementById("audio-player-div");
+const dropZone = document.getElementById("main-div");
+
 // links audio file, first song by deafualt
 audioPlayer.src = "assets/music/song1";
 audioPlayer.volume = 0.5;
@@ -86,6 +90,19 @@ function secondsToMMSS(seconds) {
 
     return MM + ":" + SS;
 }
+
+// drag and drop functions
+audioPlayerCard.addEventListener("dragstart", function (event) {
+    console.log(event)
+})
+
+dropZone.addEventListener("dragover", function (event) {
+    event.preventDeafault()
+})
+
+dropZone.addEventListener("drop", function (event) {
+    dropZone.prepend(card)
+})
 
 // links all events to functions
 playPauseButton.onclick = onPlayPauseClick;

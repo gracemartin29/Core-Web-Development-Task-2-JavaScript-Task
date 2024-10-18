@@ -24,15 +24,15 @@
     width: 30px;
 }
 
-/* main div container */
+/* main div container .aka drop zone */
 #main-div {
     width: 100vw;
     height: 100vh;
 }
 
-/* audio player div container */
+/* audio player div container .aka card*/
 #audio-player-div {
-    width: 40%;
+    width: 500px;
     background-color: blue;
     height: 300px;
     margin-top: 10px;
