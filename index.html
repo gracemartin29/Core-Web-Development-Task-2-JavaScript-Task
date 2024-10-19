@@ -14,7 +14,7 @@
     <div class="vertical-container" id="main-div">
 
         <div id="item" class="vertical-container" draggable="true">
-            
+
             <!-- audio player title -->
             <h1> ~ Deftones ~ </h1>
 
@@ -23,22 +23,28 @@
 
                 <!-- song name and artist -->
                 <p>
-                    <span> Mascara </span>
+                    <span id="song-name"> Mascara </span>
                     <span> by </span>
                     <span> Deftones </span>
                 </p>
 
                 <div class="container">
-                    <!-- volume control -->
-                    <div>
-                        <input type="range" min="0" max="100" id="volume-slider">
-                    </div>
+                    <div class="vertical-container"> <!-- volume control -->
+                        <div>
+                            <p>Volume</p>
+                            <input type="range" min="0" max="100" id="volume-slider">
+                        </div>
 
-                    <!-- play, next and previous buttons -->
-                    <div>
-                        <button> <img src="assets/images/icons/previous-icon.png" alt="Previous" class="card"> </button>
-                        <button id="play-button"> <img src="assets/images/icons/play-icon.png" alt="Play" class="card"></button>
-                        <button> <img src="assets/images/icons/next-icon.png" alt="Next" class="card"> </button>
+                        <!-- play, next and previous buttons -->
+                        <div>
+                            <button id="previous-button"> <img src="assets/images/icons/previous-icon.png"
+                                    alt="Previous" class="card">
+                            </button>
+                            <button> <img id="play-button" src="assets/images/icons/play-icon.png" alt="Play"
+                                    class="card"></button>
+                            <button id="next-button"> <img src="assets/images/icons/next-icon.png" alt="Next"
+                                    class="card"> </button>
+                        </div>
                     </div>
 
                     <!-- song image -->

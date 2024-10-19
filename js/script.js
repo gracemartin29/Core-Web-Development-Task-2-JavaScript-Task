@@ -1,13 +1,22 @@
+// songs arrays
+const songImageSource = ["assets/images/song covers/mascara-image.jpg", "assets/images/song covers/rosemary-image.jpg", "assets/images/song covers/ceremony-image.png"];
+const songNames = ["Mascara", "Rosemary", "Ceremony"];
+const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3"];
+
+// defines song iformation constants
+const coverImage = document.getElementById("cover-img");
+const songName = document.getElementById("song-name");
+
 // audio player object
 const audioPlayer = new Audio();
 
-// play pause button
+// play pause next previous button
 const playPauseButton = document.getElementById("play-button");
+const nextButton = document.getElementById("next-button");
+const previousButton = document.getElementById("previous-button");
 
-// progress slider
+// sliders
 const progressSlider = document.getElementById("progress-slider");
-
-// volume slider
 const volumeSlider = document.getElementById("volume-slider");
 
 // progress and duration text
@@ -34,11 +43,13 @@ let updatingProgress = false;
 function onPlayPauseClick() {
     if (playing) {
         audioPlayer.pause();
-        playPauseButton.innerHTML = "Play";
+        playPauseButton.src = "assets/images/icons/play-icon.png";
+        playPauseButton.alt = "Play";
         playing = false;
     } else {
         audioPlayer.play();
-        playPauseButton.innerHTML = "Pause";
+        playPauseButton.src = "assets/images/icons/pause-icon.png";
+        playPauseButton.alt = "Pause";
         playing = true;
     }
 }
@@ -95,6 +106,36 @@ function secondsToMMSS(seconds) {
     return MM + ":" + SS;
 }
 
+let songCount = 0;
+
+// next song function
+function nextSong() {
+    // song count
+    songCount += 1;
+    if (songCount > 2) {
+        songCount = 0;
+    }
+
+    // changes song information
+    coverImage.src = songImageSource[songCount];
+    songName.innerHTML = songNames[songCount];
+    audioPlayer.src = songAudioSource[songCount];
+}
+
+// previous song function
+function previousSong() {
+    // song count
+    songCount -= 1;
+    if (songCount < 0) {
+        songCount = 2;
+    }
+
+    // changes song information
+    coverImage.src = songImageSource[songCount];
+    songName.innerHTML = songNames[songCount];
+    audioPlayer.src = songAudioSource[songCount];
+}
+
 // drag and drop functions
 item.addEventListener("dragstart", function (event) {
     console.log(event)
@@ -126,3 +167,5 @@ audioPlayer.onended = onEnd;
 volumeSlider.onchange = onVolumeSliderChange;
 progressSlider.onchange = onProgressSliderChange;
 progressSlider.onmousedown = onProgressMouseDown;
+nextButton.onclick = nextSong;
+previousButton.onclick = previousSong;

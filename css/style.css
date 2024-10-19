@@ -4,9 +4,12 @@
     padding: 0;
 }
 
-/* h1 styling */
 h1{
     text-shadow: 0 0 20px rgb(123, 255, 244);
+}
+
+p{
+    text-shadow: 0 0 6px rgb(0, 0, 0);
 }
 
 /* display items with flex, center horizontally and vertically */
@@ -26,7 +29,7 @@ h1{
 
 /* icon card */
 .card {
-    width: 30px;
+    width: 35px;
 }
 
 /* main div container .aka drop zone */
@@ -54,11 +57,7 @@ h1{
     width: 210px;
     height: 210px;
     object-fit: cover;
-    padding: 5px;
-}
-
-#progress-slider {
-    width: 100px;
+    padding: 10px;
 }
 
 #item{
