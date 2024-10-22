@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
 /* remove auto padding and margin */
 * {
     margin: 0;
@@ -6,10 +8,12 @@
 
 h1 {
     text-shadow: 0 0 20px rgb(123, 255, 244);
+    font-family: Playball;
 }
 
 p {
     text-shadow: 0 0 6px rgb(0, 0, 0);
+    font-style: italic;
 }
 
 /* display items with flex, center horizontally and vertically */
@@ -33,13 +37,12 @@ p {
     cursor: pointer;
 }
 
-/* slider styles= */
-.slider{
-    /* appearance: none; */
+/* slider styles */
+.slider {
     cursor: pointer;
 }
 
-.slider:hover{
+.slider:hover {
     opacity: 1;
 }
 

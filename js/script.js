@@ -4,7 +4,7 @@ const songNames = ["Mascara", "Rosemary", "Ceremony"];
 const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3"];
 
 let songCount = 0;
-const lastSong = (songImageSource.length -1);
+const lastSong = (songImageSource.length - 1);
 
 // defines song iformation constants
 const coverImage = document.getElementById("cover-img");
@@ -101,7 +101,7 @@ function onEnd() {
 // volume slider function
 function onVolumeSliderChange() {
     audioPlayer.volume = (volumeSlider.value) * 0.01;
-    volumeLevel.innerHTML = (volumeSlider.value)
+    volumeLevel.innerHTML = (volumeSlider.value);
 }
 
 function onProgressMouseDown() {
