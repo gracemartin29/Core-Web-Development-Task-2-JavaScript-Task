@@ -4,6 +4,7 @@ const songNames = ["Mascara", "Rosemary", "Ceremony"];
 const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3"];
 
 let songCount = 0;
+const numberOfSongs = (songImageSource.length -1);
 
 // defines song iformation constants
 const coverImage = document.getElementById("cover-img");
@@ -74,7 +75,7 @@ function onEnd() {
     songCount += 1;
 
     // pauses audio and goes back to the first song when last song finishes
-    if (songCount > 2) {
+    if (songCount > numberOfSongs) {
         songCount = 0;
         audioPlayer.pause();
         progressSlider.value = 0;
@@ -129,7 +130,7 @@ function secondsToMMSS(seconds) {
 function nextSong() {
     // song count
     songCount += 1;
-    if (songCount > 2) {
+    if (songCount > numberOfSongs) {
         songCount = 0;
     }
 
@@ -151,7 +152,7 @@ function previousSong() {
     // song count
     songCount -= 1;
     if (songCount < 0) {
-        songCount = 2;
+        songCount = numberOfSongs;
     }
 
     // changes song information
