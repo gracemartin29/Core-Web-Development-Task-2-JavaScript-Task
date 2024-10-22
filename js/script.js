@@ -3,6 +3,8 @@ const songImageSource = ["assets/images/song covers/mascara-image.jpg", "assets/
 const songNames = ["Mascara", "Rosemary", "Ceremony"];
 const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3"];
 
+let songCount = 0;
+
 // defines song iformation constants
 const coverImage = document.getElementById("cover-img");
 const songName = document.getElementById("song-name");
@@ -69,11 +71,27 @@ function onTimeUpdate() {
 }
 
 function onEnd() {
-    progressSlider.value = 0;
-    playPauseButton.innerHTML = "Play";
-    playing = false;
+    songCount += 1;
+    
+    // pauses audio and goes back to the first song when last song finishes
+    if (songCount > 2) {
+        songCount = 0;
+        audioPlayer.pause();
+        progressSlider.value = 0;
+        playPauseButton.src = "assets/images/icons/play-icon.png";
+        playPauseButton.alt = "Play";
+        progressText.innerHTML = "00:00";
+        playing = false;
+    } 
+    // next song automatically plays after previous song finishes
+    else {
+        playing = true;
+        audioPlayer.play();
+    }
 
-    progressText.innerHTML = "00:00";
+    coverImage.src = songImageSource[songCount];
+    songName.innerHTML = songNames[songCount];
+    audioPlayer.src = songAudioSource[songCount];
 }
 
 // volume slider function
@@ -105,8 +123,6 @@ function secondsToMMSS(seconds) {
 
     return MM + ":" + SS;
 }
-
-let songCount = 0;
 
 // next song function
 function nextSong() {
@@ -142,7 +158,7 @@ function previousSong() {
     songName.innerHTML = songNames[songCount];
     audioPlayer.src = songAudioSource[songCount];
 
-// auto play next song if the previous song was already playing / doesnt auto play if the previous song was paused
+    // auto play next song if the previous song was already playing / doesnt auto play if the previous song was paused
     if (playing) {
         audioPlayer.play();
     } else {
