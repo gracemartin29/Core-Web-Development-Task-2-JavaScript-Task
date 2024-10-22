@@ -82,16 +82,17 @@ function onEnd() {
         playPauseButton.alt = "Play";
         progressText.innerHTML = "00:00";
         playing = false;
+        audioPlayer.src = songAudioSource[songCount];
     }
     // next song automatically plays after previous song finishes
     else {
+        audioPlayer.src = songAudioSource[songCount];
         audioPlayer.play();
         playing = true;
     }
 
     coverImage.src = songImageSource[songCount];
     songName.innerHTML = songNames[songCount];
-    audioPlayer.src = songAudioSource[songCount];
 }
 
 // volume slider function
