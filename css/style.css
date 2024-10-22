@@ -77,4 +77,5 @@ p {
 
 #item {
     position: relative;
+    cursor: grab;
 }
