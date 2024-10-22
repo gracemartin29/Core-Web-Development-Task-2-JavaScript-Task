@@ -4,11 +4,11 @@
     padding: 0;
 }
 
-h1{
+h1 {
     text-shadow: 0 0 20px rgb(123, 255, 244);
 }
 
-p{
+p {
     text-shadow: 0 0 6px rgb(0, 0, 0);
 }
 
@@ -60,6 +60,6 @@ p{
     padding: 10px;
 }
 
-#item{
+#item {
     position: relative;
 }
