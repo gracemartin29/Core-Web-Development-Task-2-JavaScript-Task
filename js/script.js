@@ -18,6 +18,8 @@ const playPauseButton = document.getElementById("play-button");
 const nextButton = document.getElementById("next-button");
 const previousButton = document.getElementById("previous-button");
 
+const soundWaveGif = document.getElementById("sound-wave");
+
 // sliders
 const progressSlider = document.getElementById("progress-slider");
 const volumeSlider = document.getElementById("volume-slider");
@@ -51,11 +53,17 @@ function onPlayPauseClick() {
         playPauseButton.src = "assets/images/icons/play-icon.png";
         playPauseButton.alt = "Play";
         playing = false;
+
+        // gif pause
+        soundWaveGif.src = "assets/gifs/sound-waves-still.png";
     } else {
         audioPlayer.play();
         playPauseButton.src = "assets/images/icons/pause-icon.png";
         playPauseButton.alt = "Pause";
         playing = true;
+
+        // gif start
+        soundWaveGif.src = "assets/gifs/sound-waves.gif";
     }
 }
 
@@ -86,6 +94,7 @@ function onEnd() {
         progressText.innerHTML = "00:00";
         playing = false;
         audioPlayer.src = songAudioSource[songCount];
+        soundWaveGif.src = "assets/gifs/sound-waves-still.png";
     }
     // next song automatically plays after previous song finishes
     else {
