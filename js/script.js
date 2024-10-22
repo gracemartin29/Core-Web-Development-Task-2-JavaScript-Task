@@ -1,7 +1,7 @@
 // songs arrays
-const songImageSource = ["assets/images/song covers/mascara-image.jpg", "assets/images/song covers/rosemary-image.jpg", "assets/images/song covers/ceremony-image.png"];
-const songNames = ["Mascara", "Rosemary", "Ceremony"];
-const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3"];
+const songImageSource = ["assets/images/song covers/mascara-image.jpg", "assets/images/song covers/rosemary-image.jpg", "assets/images/song covers/ceremony-image.png", "assets/images/song covers/beauty-school-image.png"];
+const songNames = ["Mascara", "Rosemary", "Ceremony", "Beauty School"];
+const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3", "assets/music/beauty-school-audio.mp3"];
 
 let songCount = 0;
 const lastSong = (songImageSource.length - 1);
