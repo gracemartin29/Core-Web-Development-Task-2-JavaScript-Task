@@ -72,7 +72,7 @@ function onTimeUpdate() {
 
 function onEnd() {
     songCount += 1;
-    
+
     // pauses audio and goes back to the first song when last song finishes
     if (songCount > 2) {
         songCount = 0;
@@ -82,11 +82,11 @@ function onEnd() {
         playPauseButton.alt = "Play";
         progressText.innerHTML = "00:00";
         playing = false;
-    } 
+    }
     // next song automatically plays after previous song finishes
     else {
-        playing = true;
         audioPlayer.play();
+        playing = true;
     }
 
     coverImage.src = songImageSource[songCount];
