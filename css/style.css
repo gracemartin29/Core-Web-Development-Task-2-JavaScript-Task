@@ -81,3 +81,11 @@ p {
     position: relative;
     cursor: grab;
 }
+
+#sound-wave{
+    width: 126px;
+    height: 50px;
+    object-fit: cover;
+    padding: 4px;
+    border-radius: 10px;
+}
