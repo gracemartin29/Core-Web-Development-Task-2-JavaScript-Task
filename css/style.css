@@ -30,6 +30,17 @@ p {
 /* icon card */
 .card {
     width: 35px;
+    cursor: pointer;
+}
+
+/* slider styles= */
+.slider{
+    /* appearance: none; */
+    cursor: pointer;
+}
+
+.slider:hover{
+    opacity: 1;
 }
 
 /* main div container .aka drop zone */
@@ -53,6 +64,7 @@ p {
     margin-top: 10px;
 }
 
+/* song cover image style */
 #cover-img {
     width: 210px;
     height: 210px;

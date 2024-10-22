@@ -31,8 +31,8 @@
                 <div class="container">
                     <div class="vertical-container"> <!-- volume control -->
                         <div>
-                            <p>Volume</p>
-                            <input type="range" min="0" max="100" id="volume-slider" draggable="false">
+                            <p>Volume: <span id="volume-level"> 50</span>%</p>
+                            <input class="slider" type="range" min="0" max="100" id="volume-slider" draggable="false">
                         </div>
 
                         <!-- play, next and previous buttons -->
@@ -56,7 +56,7 @@
                     <p><span id="progress-text">00:00</span> /
                         <span id="duration-text">00:00</span>
                     </p>
-                    <input id="progress-slider" type="range" value="0" draggable="false">
+                    <input id="progress-slider" class="slider" type="range" value="0" draggable="false">
                 </div>
             </div>
         </div>

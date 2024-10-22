@@ -22,6 +22,8 @@ const previousButton = document.getElementById("previous-button");
 const progressSlider = document.getElementById("progress-slider");
 const volumeSlider = document.getElementById("volume-slider");
 
+const volumeLevel = document.getElementById("volume-level");
+
 // progress and duration text
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
@@ -99,6 +101,7 @@ function onEnd() {
 // volume slider function
 function onVolumeSliderChange() {
     audioPlayer.volume = (volumeSlider.value) * 0.01;
+    volumeLevel.innerHTML = (volumeSlider.value)
 }
 
 function onProgressMouseDown() {
