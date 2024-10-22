@@ -120,6 +120,13 @@ function nextSong() {
     coverImage.src = songImageSource[songCount];
     songName.innerHTML = songNames[songCount];
     audioPlayer.src = songAudioSource[songCount];
+
+    // auto play next song if the previous song was already playing / doesnt auto play if the previous song was paused
+    if (playing) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+    }
 }
 
 // previous song function
@@ -134,6 +141,13 @@ function previousSong() {
     coverImage.src = songImageSource[songCount];
     songName.innerHTML = songNames[songCount];
     audioPlayer.src = songAudioSource[songCount];
+
+// auto play next song if the previous song was already playing / doesnt auto play if the previous song was paused
+    if (playing) {
+        audioPlayer.play();
+    } else {
+        audioPlayer.pause();
+    }
 }
 
 // drag and drop functions
