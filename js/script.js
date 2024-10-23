@@ -184,10 +184,8 @@ function onEnd() {
     songName.innerHTML = songNames[songCount];
 }
 
-// drag and drop functions
+// drag and drop 
 item.addEventListener("dragstart", function (event) {
-    console.log(event)
-
     draggedElements = event.target;
 
     const style = window.getComputedStyle(draggedElements);
@@ -197,23 +195,21 @@ item.addEventListener("dragstart", function (event) {
 })
 
 dropZone.addEventListener("dragover", function (event) {
-    event.preventDefault()
+    event.preventDefault();
 })
 
 dropZone.addEventListener("drop", function (event) {
-    dropZone.prepend(item)
-
     draggedElements.style.left = event.clientX - offsetX + "px";
     draggedElements.style.top = event.clientY - offsetY + "px";
 })
 
-// links all events to functions
+// links all events to relevant functions
 playPauseButton.onclick = onPlayPauseClick;
-audioPlayer.onloadedmetadata = onLoadedMetadata;
 audioPlayer.ontimeupdate = onTimeUpdate;
-audioPlayer.onended = onEnd;
-volumeSlider.onchange = onVolumeSliderChange;
-progressSlider.onchange = onProgressSliderChange;
+audioPlayer.onloadedmetadata = onLoadedMetadata;
 progressSlider.onmousedown = onProgressMouseDown;
+progressSlider.onchange = onProgressSliderChange;
+volumeSlider.onchange = onVolumeSliderChange;
 nextButton.onclick = nextSong;
 previousButton.onclick = previousSong;
+audioPlayer.onended = onEnd;
