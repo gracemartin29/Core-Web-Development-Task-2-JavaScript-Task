@@ -127,7 +127,7 @@ function nextSong() {
     // automatically plays next song if the previous song was already playing 
     if (playing) {
         audioPlayer.play();
-    } 
+    }
     // doesnt automatically play if the previous song was paused
     else {
         audioPlayer.pause();
@@ -149,7 +149,7 @@ function previousSong() {
     // automatically plays next song if the previous song was already playing 
     if (playing) {
         audioPlayer.play();
-    } 
+    }
     // doesnt automatically play if the previous song was paused
     else {
         audioPlayer.pause();
