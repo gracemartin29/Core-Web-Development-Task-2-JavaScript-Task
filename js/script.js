@@ -1,5 +1,3 @@
-// defines variables
-
 //songs information array
 const songInfo = [
     {
@@ -24,6 +22,8 @@ const songInfo = [
     },
 ];
 
+// defineing variables
+
 // song counter
 let songCount = 0;
 const lastSong = (songInfo.length - 1);
@@ -46,8 +46,8 @@ const previousButton = document.getElementById("previous-button");
 const progressSlider = document.getElementById("progress-slider");
 const volumeSlider = document.getElementById("volume-slider");
 
-// determines whether any slider is moving
-let sliderIsChanging = false
+// determines whether any sliders are being moved
+let sliderIsChanging = false;
 
 // progress, duration and volume text
 const progressText = document.getElementById("progress-text");
@@ -131,14 +131,14 @@ function onProgressSliderChange() {
 }
 
 // volume slider 
+function onVolumeMouseDown() {
+    sliderIsChanging = true;
+}
+
 function onVolumeSliderChange() {
     audioPlayer.volume = (volumeSlider.value) * 0.01;
     volumeLevelText.innerHTML = (volumeSlider.value);
     sliderIsChanging = false;
-}
-
-function onVolumeMouseDown() {
-    sliderIsChanging = true;
 }
 
 // next song button
