@@ -1,13 +1,32 @@
 // defines variables
 
-//songs arrays
-const songImageSource = ["assets/images/song covers/mascara-image.jpg", "assets/images/song covers/rosemary-image.jpg", "assets/images/song covers/ceremony-image.png", "assets/images/song covers/beauty-school-image.png"];
-const songNames = ["Mascara", "Rosemary", "Ceremony", "Beauty School"];
-const songAudioSource = ["assets/music/mascara-audio.mp3", "assets/music/rosemary-audio.mp3", "assets/music/ceremony-audio.mp3", "assets/music/beauty-school-audio.mp3"];
+//songs information array
+const songInfo = [
+    {
+        audioSource: "assets/music/mascara-audio.mp3",
+        title: "Mascara",
+        imageSource: "assets/images/song covers/mascara-image.jpg"
+    },
+    {
+        audioSource: "assets/music/rosemary-audio.mp3",
+        title: "Rosemary",
+        imageSource: "assets/images/song covers/rosemary-image.jpg" 
+    },
+    {
+        audioSource: "assets/music/ceremony-audio.mp3",
+        title: "Ceremony",
+        imageSource: "assets/images/song covers/ceremony-image.png"
+    },
+    {
+        audioSource: "assets/music/beauty-school-audio.mp3",
+        title: "Beauty School",
+        imageSource: "assets/images/song covers/beauty-school-image.png"
+    },
+];
 
 // song counter
 let songCount = 0;
-const lastSong = (songImageSource.length - 1);
+const lastSong = (songInfo.length - 1);
 
 // song information elements 
 const coverImage = document.getElementById("cover-img");
@@ -130,9 +149,9 @@ function nextSong() {
     }
 
     // changes song information
-    coverImage.src = songImageSource[songCount];
-    songName.innerHTML = songNames[songCount];
-    audioPlayer.src = songAudioSource[songCount];
+    audioPlayer.src = songInfo[songCount].audioSource;
+    songName.innerHTML = songInfo[songCount].title;
+    coverImage.src = songInfo[songCount].imageSource;
 
     // automatically plays next song if the previous song was already playing 
     if (playing) {
@@ -152,9 +171,9 @@ function previousSong() {
     }
 
     // changes song information
-    coverImage.src = songImageSource[songCount];
-    songName.innerHTML = songNames[songCount];
-    audioPlayer.src = songAudioSource[songCount];
+    audioPlayer.src = songInfo[songCount].audioSource;
+    songName.innerHTML = songInfo[songCount].title;
+    coverImage.src = songInfo[songCount].imageSource;
 
     // automatically plays next song if the previous song was already playing 
     if (playing) {
@@ -201,6 +220,7 @@ item.addEventListener("dragstart", function (event) {
         event.preventDefault();
         return;
     }
+
     draggedElements = event.target;
 
     const style = window.getComputedStyle(draggedElements);
