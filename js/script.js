@@ -27,6 +27,9 @@ const previousButton = document.getElementById("previous-button");
 const progressSlider = document.getElementById("progress-slider");
 const volumeSlider = document.getElementById("volume-slider");
 
+// determines whether any slider is moving
+let sliderIsChanging = false
+
 // progress, duration and volume text
 const progressText = document.getElementById("progress-text");
 const durationText = document.getElementById("duration-text");
@@ -99,17 +102,24 @@ function secondsToMMSS(seconds) {
 // progress slider
 function onProgressMouseDown() {
     updatingProgress = true;
+    sliderIsChanging = true;
 }
 
 function onProgressSliderChange() {
     audioPlayer.currentTime = progressSlider.value;
     updatingProgress = false;
+    sliderIsChanging = false;
 }
 
 // volume slider 
 function onVolumeSliderChange() {
     audioPlayer.volume = (volumeSlider.value) * 0.01;
     volumeLevelText.innerHTML = (volumeSlider.value);
+    sliderIsChanging = false;
+}
+
+function onVolumeMouseDown() {
+    sliderIsChanging = true;
 }
 
 // next song button
@@ -186,6 +196,11 @@ function onEnd() {
 
 // drag and drop 
 item.addEventListener("dragstart", function (event) {
+    // allows sliders to slide without dragging
+    if (sliderIsChanging) {
+        event.preventDefault();
+        return;
+    }
     draggedElements = event.target;
 
     const style = window.getComputedStyle(draggedElements);
@@ -210,6 +225,7 @@ audioPlayer.onloadedmetadata = onLoadedMetadata;
 progressSlider.onmousedown = onProgressMouseDown;
 progressSlider.onchange = onProgressSliderChange;
 volumeSlider.onchange = onVolumeSliderChange;
+volumeSlider.onmousedown = onVolumeMouseDown;
 nextButton.onclick = nextSong;
 previousButton.onclick = previousSong;
 audioPlayer.onended = onEnd;
