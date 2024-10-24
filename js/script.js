@@ -10,7 +10,7 @@ const songInfo = [
     {
         audioSource: "assets/music/rosemary-audio.mp3",
         title: "Rosemary",
-        imageSource: "assets/images/song covers/rosemary-image.jpg" 
+        imageSource: "assets/images/song covers/rosemary-image.jpg"
     },
     {
         audioSource: "assets/music/ceremony-audio.mp3",
@@ -198,19 +198,19 @@ function onEnd() {
         playPauseButton.alt = "Play";
         progressText.innerHTML = "00:00";
         playing = false;
-        audioPlayer.src = songAudioSource[songCount];
+        audioPlayer.src = songInfo[songCount].audioSource;
         soundWaveGif.src = "assets/gifs/sound-waves-still.png";
     }
     // next song automatically plays after previous song finishes
     else {
-        audioPlayer.src = songAudioSource[songCount];
+        audioPlayer.src = songInfo[songCount].audioSource;
         audioPlayer.play();
         playing = true;
     }
 
     // changes song information
-    coverImage.src = songImageSource[songCount];
-    songName.innerHTML = songNames[songCount];
+    coverImage.src = songInfo[songCount].imageSource;
+    songName.innerHTML = songInfo[songCount].songName;
 }
 
 // drag and drop 
