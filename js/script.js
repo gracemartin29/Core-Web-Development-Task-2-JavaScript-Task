@@ -92,7 +92,7 @@ function onPlayPauseClick() {
 
 // displays song progress and duration
 function onTimeUpdate() {
-    if (!updatingProgress) {
+    if (updatingProgress = false) {
         progressSlider.value = audioPlayer.currentTime;
     }
     progressText.innerHTML = secondsToMMSS(audioPlayer.currentTime);
